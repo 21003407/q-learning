@@ -1,6 +1,34 @@
+# Q Learning Algorithm
+
+
+## AIM
+To develop a Python program to find the optimal policy for the given RL environment using Q-Learning and compare the state values with the Monte Carlo method.
+
+## PROBLEM STATEMENT
+Develop a Python program to derive the optimal policy using Q-Learning and compare state values with Monte Carlo method.
+
+## Q LEARNING ALGORITHM
+### Step 1:
+Initialize Q-table and hyperparameters.
+
+### Step 2:
+Choose an action using the epsilon-greedy policy and execute the action, observe the next state, reward, and update Q-values and repeat until episode ends.
+
+### Step 3:
+After training, derive the optimal policy from the Q-table.
+
+### Step 4:
+Implement the Monte Carlo method to estimate state values.
+
+### Step 5:
+Compare Q-Learning policy and state values with Monte Carlo results for the given RL environment.
+
+## Q LEARNING FUNCTION
+```
 NAME:A joans jay authers 
 Register Number:212221240019
-
+```
+```
 def q_learning(env, 
                gamma=1.0,
                init_alpha=0.5,
@@ -35,3 +63,16 @@ def q_learning(env,
     V=np.max(Q,axis=1)
     pi=lambda s:{s:a for s,a in enumerate(np.argmax(Q,axis=1))}[s]
     return Q, V, pi, Q_track, pi_track
+```
+
+## OUTPUT:
+### Optimal policy, optimal value function , success rate for the optimal policy.
+![Screenshot 2024-05-09 230616](https://github.com/Dhanudhanaraj/q-learning/assets/119218812/630663ae-c1cd-4905-a8d5-3a672a9e2960)
+
+### State value functions of Monte Carlo method:
+![Screenshot 2024-05-09 230638](https://github.com/Dhanudhanaraj/q-learning/assets/119218812/f672f2df-ed2e-4986-9643-2f20b0dd89b8)
+
+![Screenshot 2024-05-09 230650](https://github.com/Dhanudhanaraj/q-learning/assets/119218812/484e248c-44c8-45e7-8f33-a570259d377e)
+
+## RESULT:
+Thus, Q-Learning outperformed Monte Carlo in finding the optimal policy and state values for the RL problem.
